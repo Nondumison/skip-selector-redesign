@@ -3,7 +3,6 @@ import React from "react";
 const InfoPanel = ({ onClose }) => {
   return (
     <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-
       <div className="bg-white rounded-xl max-w-md w-full max-h-[90vh] overflow-y-auto">
         <div className="p-6">
           <div className="flex justify-between items-center mb-4">
@@ -128,7 +127,7 @@ const InfoPanel = ({ onClose }) => {
 
           <button
             onClick={onClose}
-            className="mt-6 w-full py-3 bg-primary text-white rounded-lg hover:bg-primary-dark transition"
+            className="px-8 py-3 rounded-lg font-bold text-white transition duration-300 ease-in-out shadow-md w-full sm:w-auto bg-gradient-to-r from-orange-600 to-orange-800 hover:from-orange-700 hover:to-orange-900"
           >
             Got it, thanks!
           </button>

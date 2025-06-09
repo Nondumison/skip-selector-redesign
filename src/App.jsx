@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import SkipCard from "./components/SkipCard/SkipCard";
-import Header from "./components/PriceBadge/PriceBadge";
+import Header from "./components/Header/Header";
+import PriceBadge from "./components/PriceBadge/PriceBadge";
+import LoadingSpinner from "./components/LoadingSpinner/LoadingSpinner";
+import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
 import InfoPanel from "./components/InfoPanel/InfoPanel";
 import { fetchSkipsData } from "./services/fetchSkips";
 
@@ -41,51 +44,27 @@ function App() {
     }
   };
 
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-primary mx-auto"></div>
-          <p className="mt-4 text-green-600">Loading skip options...</p>
-        </div>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <div className="bg-red-50 border-l-4 border-red-500 p-6 max-w-md">
-          <h3 className="text-red-700 font-bold">Error</h3>
-          <p className="text-red-600">{error}</p>
-          <button
-            onClick={() => window.location.reload()}
-            className="mt-4 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition"
-          >
-            Try Again
-          </button>
-        </div>
-      </div>
-    );
-  }
+  if (loading) return <LoadingSpinner />;
+  if (error) return <ErrorMessage message="Failed to load skips." />;
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-gray-50 to-gray-100">
+    <div className="min-h-screen flex flex-col bg-slate-50 font-sans antialiased">
       <Header />
+      <PriceBadge />
 
       <main className="flex-grow container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-10">
-            <h1 className="text-3xl md:text-4xl font-bold text-green-900 mb-3">
-              Choose Your Skip Size
-            </h1>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-orange-500 mb-3">
+              Select Your Skip
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
               Select the perfect skip for your garden waste. All prices include
               VAT, delivery, collection, and disposal.
             </p>
           </div>
 
-          <div className="bg-white rounded-xl shadow-sm p-6 mb-8">
+          <div className="bg-gray-100 rounded-xl shadow-sm p-6 mb-8">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-xl font-semibold text-gray-800">
                 Available Skips
@@ -109,32 +88,28 @@ function App() {
                 What's included?
               </button>
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {skips.map((skip) => (
-                <SkipCard
-                  key={skip.id}
-                  skip={skip}
-                  selected={selectedSkip === skip.id}
-                  onSelect={handleSelectSkip}
-                />
-              ))}
+            <div className="mt-20">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {skips.map((skip) => (
+                  <SkipCard
+                    key={skip.id}
+                    skip={skip}
+                    selected={selectedSkip === skip.id}
+                    onSelect={handleSelectSkip}
+                  />
+                ))}
+              </div>
             </div>
           </div>
 
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-6">
-            <button className="px-6 py-3 bg-gray-800 text-black rounded-lg shadow-md hover:bg-gray-700 transition duration-300 ease-in-out w-full sm:w-auto">
+            <button className="px-8 py-3 rounded-lg font-bold text-white transition duration-300 ease-in-out shadow-md w-full sm:w-auto bg-gradient-to-r from-green-600 to-green-800 hover:from-green-700 hover:to-green-900">
               Back to Address
             </button>
 
             <button
-              disabled={!selectedSkip}
               onClick={handleContinue}
-              className={`px-8 py-3 rounded-lg font-bold text-white transition duration-300 ease-in-out shadow-md w-full sm:w-auto ${
-                selectedSkip
-                  ? "bg-gradient-to-r from-indigo-600 to-indigo-800 hover:from-indigo-700 hover:to-indigo-900"
-                  : "bg-gray-300 text-gray-500 cursor-not-allowed"
-              }`}
+              className="px-8 py-3 rounded-lg font-bold text-white transition duration-300 ease-in-out shadow-md w-full sm:w-auto bg-gradient-to-r from-orange-600 to-orange-800 hover:from-orange-700 hover:to-orange-900"
             >
               Continue to Payment
             </button>

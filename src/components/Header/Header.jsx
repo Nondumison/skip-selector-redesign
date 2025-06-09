@@ -1,32 +1,56 @@
-// src/components/Header.jsx
-import React from 'react';
+import React from "react";
 
 const Header = () => {
   return (
-    <header className="bg-white shadow-sm">
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex justify-between items-center">
-          <div className="flex items-center">
-            <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
-            <div className="ml-4">
-              <h1 className="text-xl font-bold text-gray-900">WeWantWaste</h1>
-              <p className="text-sm text-gray-500">Eco-friendly waste solutions</p>
+    <header className="py-5 bg-slate-50/80 backdrop-blur-sm sticky top-0 z-50 border-b border-slate-200">
+      <div className="container mx-auto px-4 flex justify-between items-center">
+        <div className="flex items-center space-x-3">
+          <svg
+            className="h-8 w-8 text-brand-green"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+            />
+          </svg>
+        </div>
+
+        <div className="hidden md:flex items-center space-x-8">
+          <div className="flex items-center space-x-2">
+            <div className="w-7 h-7 rounded-full bg-brand-green flex items-center justify-center text-white text-sm font-bold shadow-md shadow-brand-green/40">
+              <svg
+                className="w-4 h-4"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clipRule="evenodd"
+                />
+              </svg>
             </div>
+            <span className="font-semibold text-brand-green">Address</span>
           </div>
-          
-          <div className="hidden md:block">
-            <div className="flex space-x-1">
-              <div className="px-3 py-1 bg-gray-200 rounded-full text-sm">1. Address</div>
-              <div className="px-3 py-1 bg-primary text-white rounded-full text-sm">2. Skip Size</div>
-              <div className="px-3 py-1 bg-gray-200 rounded-full text-sm">3. Payment</div>
+          <div className="flex items-center space-x-2">
+            <div className="w-7 h-7 rounded-full border-2 border-slate-800 flex items-center justify-center text-slate-800 text-sm font-bold">
+              2
             </div>
+            <span className="font-semibold text-slate-800">Select Skip</span>
           </div>
-          
-          <button className="text-gray-600 hover:text-gray-900">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
+          <div className="flex items-center space-x-2 text-slate-400">
+            <div className="w-7 h-7 rounded-full border-2 border-slate-400 flex items-center justify-center text-sm font-bold">
+              3
+            </div>
+            <span className="font-semibold">Payment</span>
+          </div>
         </div>
       </div>
     </header>

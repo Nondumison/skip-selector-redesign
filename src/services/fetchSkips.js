@@ -1,5 +1,4 @@
-const API_URL =
-  "https://app.wewantwaste.co.uk/api/skips/by-location?postcode=NR32&area=Lowestoft";
+const API_URL = import.meta.env.VITE_API_URL;
 
 const getDimensions = (size) => {
   const dimensionsMap = {

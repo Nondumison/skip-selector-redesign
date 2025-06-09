@@ -1,11 +1,14 @@
-@import "tailwindcss"; 
- #root {
+@import "tailwindcss";
+#root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
 
+body {
+  background: linear-gradient(to right, #5b677a, #989fb3);
+}
 
 .card {
   padding: 2em;
@@ -13,4 +16,4 @@
 
 .read-the-docs {
   color: #888;
-} 
+}
