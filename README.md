@@ -4,7 +4,7 @@ A modern, responsive redesign of the We Want Waste skip selection page, built wi
 
 ## 🚀 Live Demo
 
-[View Live Demo](https://skip-selector-redesign-n0bi6l9hr-nondumisos-projects-b740904b.vercel.app/)
+[View Live Demo](https://skip-selector-redesign-sand.vercel.app/)
 
 ## 📸 Screenshots
 

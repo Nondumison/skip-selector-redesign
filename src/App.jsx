@@ -70,9 +70,9 @@ function App() {
           {view === "selection" ? (
             <>
               <div className="text-center mb-10">
-                <h1 className="text-3xl md:text-4xl font-bold text-orange-500 mb-3">
+                <h2 className="text-3xl md:text-4xl font-bold text-orange-500 mb-3">
                   Select Your Skip
-                </h1>
+                </h2>
                 <p className="text-gray-400 max-w-2xl mx-auto">
                   Select the perfect skip for your garden waste. All prices
                   include VAT, delivery, collection, and disposal.
