@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo, useMemo } from "react";
 import PriceBadge from "../PriceBadge/PriceBadge";
 
 import skip4 from "../../assets/4-yarder-skip.jpg";
@@ -22,7 +22,10 @@ const getSkipVisuals = (size) => {
 };
 
 const SkipCard = ({ skip, selected, onSelect }) => {
-  const { image, badge } = getSkipVisuals(skip.size);
+  const { image, badge } = useMemo(
+    () => getSkipVisuals(skip.size),
+    [skip.size]
+  );
 
   return (
     <div
@@ -69,4 +72,4 @@ const SkipCard = ({ skip, selected, onSelect }) => {
   );
 };
 
-export default SkipCard;
+export default memo(SkipCard);

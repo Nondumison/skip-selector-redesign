@@ -4,21 +4,14 @@ A modern, responsive redesign of the We Want Waste skip selection page, built wi
 
 ## 🚀 Live Demo
 
-[View Live Demo](https://your-project.vercel.app)
+[View Live Demo](https://skip-selector-redesign-n0bi6l9hr-nondumisos-projects-b740904b.vercel.app/)
 
 ## 📸 Screenshots
 
 ### Desktop View
 
-![Desktop View](./screenshots/desktop-view.png)
+![Desktop View](./src/assets/Desktop.jpeg)
 
-### Mobile View
-
-![Mobile View](./screenshots/mobile-view.png)
-
-### Skip Selection State
-
-![Selected State](./screenshots/selected-state.png)
 
 ## 🎯 Project Overview
 
@@ -26,7 +19,7 @@ This project is a complete redesign of the skip selection page from [We Want Was
 
 ## 🛠️ Tech Stack
 
-- **React 18** - UI library
+- **React 19** - UI library
 - **Vite** - Build tool and dev server
 - **Tailwind CSS** - Utility-first CSS framework
 - **JavaScript ES6+** - Modern JavaScript features

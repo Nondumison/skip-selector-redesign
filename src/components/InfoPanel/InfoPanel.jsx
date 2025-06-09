@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 
 const InfoPanel = ({ onClose }) => {
   return (
@@ -137,4 +137,4 @@ const InfoPanel = ({ onClose }) => {
   );
 };
 
-export default InfoPanel;
+export default memo(InfoPanel);

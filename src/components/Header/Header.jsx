@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 
 const Header = () => {
   return (
@@ -6,7 +6,7 @@ const Header = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center space-x-3">
           <svg
-            className="h-8 w-8 text-brand-green"
+            className="h-8 w-8 text-green-600"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -21,9 +21,9 @@ const Header = () => {
           </svg>
         </div>
 
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="flex items-center space-x-4 sm:space-x-8">
           <div className="flex items-center space-x-2">
-            <div className="w-7 h-7 rounded-full bg-brand-green flex items-center justify-center text-white text-sm font-bold shadow-md shadow-brand-green/40">
+            <div className="w-7 h-7 rounded-full bg-green-600 flex items-center justify-center text-white text-sm font-bold shadow-md shadow-green-600/40">
               <svg
                 className="w-4 h-4"
                 xmlns="http://www.w3.org/2000/svg"
@@ -37,19 +37,26 @@ const Header = () => {
                 />
               </svg>
             </div>
-            <span className="font-semibold text-brand-green">Address</span>
+
+            <span className="hidden sm:inline font-semibold text-green-600">
+              Address
+            </span>
           </div>
           <div className="flex items-center space-x-2">
             <div className="w-7 h-7 rounded-full border-2 border-slate-800 flex items-center justify-center text-slate-800 text-sm font-bold">
               2
             </div>
-            <span className="font-semibold text-slate-800">Select Skip</span>
+
+            <span className="hidden sm:inline font-semibold text-slate-800">
+              Select Skip
+            </span>
           </div>
           <div className="flex items-center space-x-2 text-slate-400">
             <div className="w-7 h-7 rounded-full border-2 border-slate-400 flex items-center justify-center text-sm font-bold">
               3
             </div>
-            <span className="font-semibold">Payment</span>
+
+            <span className="hidden sm:inline font-semibold">Payment</span>
           </div>
         </div>
       </div>
@@ -57,4 +64,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default memo(Header);
